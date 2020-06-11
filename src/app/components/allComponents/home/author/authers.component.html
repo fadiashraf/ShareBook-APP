@@ -1,0 +1,38 @@
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <small>People’s Choice</small> 
+               </div>   
+        </div> 
+        <div class="row">      
+                   <div class="col-lg-12">
+                    <p class=" h5" style="size: 10ch">Most Popular Authors</p>
+                    <hr>
+                   </div>
+            </div> 
+                 
+              
+        <div class="card-deck ">
+            <div class="row" >  
+              
+                <div class="card col-lg-2 border-0 divhover" *ngFor="let auther of loadedAuthers">
+              <img width="200px" height="250px" src="http://localhost:3000/{{auther.img}}"  onerror="this.onerror=null;this.src='./assets/ads_book/imag-03.jpg'" class="card-img-top autherimg" alt="...">
+              
+              <div class="card-body p-0 pt-2 text-center ">
+            
+                <h6 class="card-title Book "  >{{auther.Name}}</h6>
+                    
+                <p class="card-text "> <small> num published Books</small> </p>
+                
+                
+                
+                              </div>
+            </div>
+            
+        
+            
+        </div>
+        </div>
+        </div>
+        
+        

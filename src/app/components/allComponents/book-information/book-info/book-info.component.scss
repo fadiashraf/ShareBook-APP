@@ -1,0 +1,97 @@
+
+.isbn
+{
+    color:#666666;
+    size:13px;
+    
+}
+.isbn-num
+{
+    size:16px;
+    color:#666666;
+    font-weight: bold;
+
+}
+.info-book
+{
+    width:75%;
+    padding: 1% 2%;
+
+}
+.view-book
+{
+    width:25%;
+    padding: 1% 2%;
+
+}
+.title-book
+{
+    font-size: 30px;
+    line-height: 20px;
+    color:#484848;
+    padding-bottom: .5%;
+    
+    
+}
+.yellow-star
+{
+    color:#fcd01e ;
+    font-size: 20px;
+}
+.white-star
+{
+    color:	#DADADA;
+}
+
+.description
+{
+    line-height: 20px;
+    letter-spacing: normal;
+    color: rgb(129, 126, 126);
+    border-top: .5px solid #D2CFCF;
+    padding-top: 4.5%;
+}
+.btn-review
+{
+    background-color:#fc3;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    // color: #484848;
+}
+.btn-review:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.by-color
+{
+    color:#D2CFCF;
+}
+.name-auther
+{
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #484848;
+}
+
+.info{
+    margin-top: 5%;
+}
+// ////////////////////////////////
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #d3d3d3;
+  }
+  .full {
+    color: #fcd01e;
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #fcd01e;
+  }

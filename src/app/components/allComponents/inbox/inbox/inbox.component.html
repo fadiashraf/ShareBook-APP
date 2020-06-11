@@ -1,0 +1,24 @@
+<div class="container info">
+    <table class="table table-sm">
+        <thead>
+          <tr>
+            
+            <th scope="col">sender</th>
+            <th scope="col">Last message</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+           <tr *ngFor="let msg of inboxArray" >
+            
+              <td>{{msg.senderName[0]?.name}}</td>
+              <td><a  routerLink="./{{msg._id.senderId}}">{{msg.lastReceivedMessage}} </a> </td>
+              <td>{{msg.Datewrote | date:'medium'}}</td>
+           
+          </tr>
+        
+
+        </tbody>
+      </table>    
+</div>

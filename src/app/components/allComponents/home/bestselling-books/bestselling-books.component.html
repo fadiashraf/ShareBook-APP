@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <small>People’s Choice</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <p class=" h5" style="size: 10ch">Request Books</p>
+      <hr>
+    </div>
+  </div>
+
+
+  <div class="card-deck ">
+    <div class="row">
+      <div *ngFor="let req of sixRequest" class="card col-lg-2 border-0 col-md-2 col-sm-6 ">
+        <img src="http://localhost:3000/{{req.img}}" onerror="this.onerror=null;this.src='assets/images/books/1.jpg'" class="card-img-top bookimg" alt="...">
+
+        <div class="card-body " style="margin-left: -11%">
+
+          <h6 class="card-title Book">{{req.title}}</h6>
+          <p class="card-text">By: <small class="Auther"> {{req.userId.name}}</small><br>
+            <ng-template #t let-fill="fill">
+              <div class="edit-star">
+                  <span class="star" [class.full]="fill === 100">
+                      <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                  </span></div>
+              </ng-template>
+
+              <ngb-rating [(rate)]="req.bookID.avgRating" [starTemplate]="t" [readonly]="true" max="5">
+          </ngb-rating>
+          </p>
+          <p class="category" style="margin-top: -5%"> {{req.CategoryId.catName}}</p>
+      
+          <a routerLink="/req-book/{{req._id}}" class="btn btn-outline-success">Show Details</a>
+        </div>
+      </div>
+
+
+    </div>

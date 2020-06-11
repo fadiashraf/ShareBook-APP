@@ -1,0 +1,78 @@
+h6.Book:hover
+{
+ color: 		#32CD32;   
+}
+p small.Auther:hover,.category:hover
+{
+    color: 	#4169E1;    
+}
+.price
+{
+    color: #32CD32;
+    font-weight: bold;
+   font-size: 3ch ;
+}
+
+@mixin flex() {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex {
+    @include flex();
+  }  
+
+.custom-icon {
+    cursor: pointer;
+    display: flex;
+    width: 3vw;
+    height: 3vw;
+    color: gray;
+    
+    border-radius: 25vw;
+   // overflow: hidden;
+    background-size: cover;
+    border: 6px solid #fff;
+    background-color: whitesmoke;
+    opacity: 0.8;
+   }
+
+
+
+   .imagedropshadow {
+    padding: 5px;
+    border: solid 1px #EFEFEF;
+}
+.divhover:hover{
+    img{
+   
+    
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+       
+       // width: 100%;
+      //  position: absolute;
+}
+.ficon
+{
+    background-color: rgb(9, 36, 119);
+    color:white;
+}
+.ticon
+{
+    background-color:#3C99D5;
+    color:white;
+}
+.iicon
+{
+    background-color:rgb(3, 80, 131);
+    color:white;
+}
+
+}
+.autherimg
+{
+    border: 5px solid white; 
+    width: 100%;
+}
+

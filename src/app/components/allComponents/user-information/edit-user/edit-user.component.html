@@ -1,0 +1,81 @@
+<div class="container mt-4 info">
+    <div class="text-center">
+        <h3>Update Information</h3>
+    </div>
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+        <div class="form-row">
+            <div class="col">
+                <label for="Firstname">First name</label>
+                <input type="text" value="{{splitted[0]}}" minlength=3 maxlength=10 pattern="[a-zA-Z]{3,}" required id="Firstname" name="firstName" ngModel
+                    #Firstname=ngModel class="form-control" placeholder="First name">
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && !Firstname.valid && Firstname.dirty">
+                    <div *ngIf="Firstname.errors.required">
+                        Firstname is required
+                    </div>
+                    <div *ngIf="Firstname.errors.minlength">
+                        Firstname must be at least 3 characters long.
+                    </div>
+                    <div *ngIf="Firstname.errors.forbiddenName">
+                        Firstname cannot be Bob.
+                    </div>
+                    <div *ngIf=" !Firstname.valid&&(!f.submitted||Firstname.dirty)">
+                        name must be only characters without spacies
+                      </div>
+                </div>
+            </div>
+            <div class="col">
+                <label for="Lastname">Last name</label>
+                <input type="text" value="{{splitted[1]}}" name="lastName" pattern="[a-zA-Z]{3,}" ngModel #Lastname=ngModel minlength=3 maxlength=10 required
+                    id="Lastname" class="form-control" placeholder="Last name">
+                <div class="alert alert-danger" role="alert" *ngIf="!Lastname.valid &&f.submitted && Lastname.dirty">
+                    <div *ngIf="Lastname.errors.required">
+                        Lastname is required
+                    </div>
+                    <div *ngIf="Lastname.errors.minlength">
+                        Lastname must be at least 3 characters long.
+                    </div>
+                    <div *ngIf="Lastname.errors.forbiddenName">
+                        Lastname cannot be Bob.
+                    </div>
+                    <div *ngIf=" !Lastname.valid&&(!f.submitted||Lastname.dirty)">
+                        name must be only characters without spacies
+                      </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" name="email" required email class="form-control" value="{{userInfo?.email}}" ngModel #email=ngModel
+                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+            <div class="alert alert-danger" role="alert" *ngIf="!email.valid &&f.submitted&&email.dirty ">
+                <div *ngIf="email.errors.required">
+                    Email is required
+                </div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputphone">Phone</label>
+            <input type="phone" name="phone" pattern="^01[0-2]|[5]{1}[0-9]{8}" value="{{userInfo?.phone}}"  maxlength=20 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"value="{{userInfo?.phone}}" required phone class="form-control" ngModel #phone=ngModel
+                id="exampleInputphone" aria-describedby="emailHelp" placeholder="phone number">
+
+            <div class="alert alert-danger" role="alert" *ngIf="!phone.valid &&f.submitted&&phone.dirty">
+                <div *ngIf="phone.errors.required">
+                    phone is required
+                </div>
+                <div *ngIf="!phone.valid">phone must be a valid phone</div>
+
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+</div>

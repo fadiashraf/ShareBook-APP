@@ -1,0 +1,58 @@
+<section class="container mt-4 mb-4 book-info">
+    <div class="row d-flex justify-content-between">
+        <div class="col-sm-2 info">
+            <a routerLink="/book/{{adsInfo?.bookID._id}}"> <img src="http://localhost:3000/{{adsInfo?.img}}"
+                    class="img-fluid img-back"></a>
+            <p class="mt-2 isbn">ISBN: <span class=" isbn-num">{{adsInfo?.ISBN}}</span></p>
+
+        </div>
+        <div class="col-sm-10 info">
+            <div class="row">
+                <div class="info-book">
+                    <!-- <p class="title-book">{{adsInfo?.title}}</p> -->
+                    <a routerLink="/book/{{adsInfo?.bookID._id}}">
+                        <p class="title-book">{{adsInfo?.title}}</p>
+                    </a>
+                    <p class="by-color">by : <span class="name-auther">{{adsInfo?.userId?.name}}</span></p>
+                    <div class="description">
+                        <p class="by-color">Description : <span class="name-auther">{{adsInfo?.description}}</span></p>
+                        <p class="by-color">Price : <span class="name-auther">{{adsInfo?.price}}</span></p>
+                        <p class="by-color">Join Us : <span
+                                class="name-auther">{{adsInfo?.updatedAt | date:'medium'}}</span></p>
+                        <p class="by-color">ads Type : <span class="name-auther">{{adsInfo?.adsType}}</span></p>
+                        <p class="by-color">category : <span class="name-auther">{{adsInfo?.CategoryId.catName}}</span>
+                        </p>
+                        <p class="by-color">Author : <span class="name-auther">{{adsInfo?.authorId.Name}}</span></p>
+                        <p class="by-color">City : <span class="name-auther">{{adsInfo?.City.name}}</span></p>
+                        <p class="by-color">Rate : <span class="name-auther">{{adsInfo?.bookID.avgRating}}</span></p>
+
+                    </div>
+                </div>
+                <div class="view-book mt-5 mb-5">
+                    <div class="review mt-3">
+
+
+
+                        <p class=" float-right w-50">{{adsInfo?.views}} views </p>
+                        <a *ngIf="userLoginId== adsInfo?.userId?._id ? false :true"
+                            routerLink="/inbox/{{adsInfo?.userId._id}}" class="btn btn-review mt-1">
+                            Send Msg
+                        </a>
+                        <a *ngIf="userLoginId== adsInfo?.userId?._id ? false :true"
+                            routerLink="/user/{{adsInfo?.userId._id}}" class="btn btn-review mt-1">
+                            profile User
+                        </a>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

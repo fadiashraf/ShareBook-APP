@@ -1,0 +1,107 @@
+.title-page
+{
+    color: #484848;
+    border-bottom: .5px solid #D2CFCF;
+    width: 100%;
+
+}
+.small-title
+{
+    font-size: 16px;
+    line-height: 16px;
+    padding-bottom: 10px;
+    color: #484848;
+}
+.large-title
+{
+    font-size: 30px;
+    line-height: 20px;
+    color:#484848;
+    padding-bottom: 3%;
+}
+.ads-book
+{
+    width: 22.5%;
+}
+.img-back:hover
+{
+    animation: ads-book 1.5s alternate infinite ease-in;
+}
+
+
+@keyframes ads-book {
+  100%   {transform: scale(.8);}
+  0% {transform: scale(1);}
+}
+.yellow-star
+{
+    color:#fcd01e ;
+    font-size: 20px;
+}
+.white-star
+{
+    color:	#DADADA;
+}
+.category-ads-book
+{
+    border-bottom: .5px solid #D2CFCF;
+}
+.category-ads-book:hover
+{
+    color:#337ab7;
+}
+
+.title-ads-book
+{
+    color: #484848;
+}
+.title-ads-book:hover
+{
+    color: #77b748;
+}
+.by-color
+{
+    color:#D2CFCF;
+}
+.name-auther
+{
+    font-size: 13px;
+    line-height: 13px;
+}
+.name-auther:hover
+{
+    color:#337ab7;
+}
+.price
+{
+    color:#77b748;
+    font-size:23px; 
+}
+
+.book-review
+{
+    width:48%;
+    padding: 3% 2%;
+}
+
+////////////////////
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: .5rem;
+    color: #d3d3d3;
+  }
+  .full {
+    color: #fcd01e;
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #fcd01e;
+  }
+
+  .info
+  {
+      margin-top:5%;
+  }

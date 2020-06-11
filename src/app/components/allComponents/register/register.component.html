@@ -1,0 +1,149 @@
+<div class="text-center">
+        
+        <h3 *ngIf="backerror">something Went Rong</h3>
+</div>
+<div class="container mt-4">
+        <div class="text-center">
+                <h3 *ngIf="!backerror">Registration Form</h3>
+                <h3 *ngIf="backerror">something Went Rong</h3>
+        </div>
+        <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                <div class="form-row">
+                        <div class="col">
+                                <label for="Firstname">First name</label>
+                                <input type="text" minlength=3 maxlength=10 required id="Firstname" name="firstName"
+                                        ngModel #Firstname=ngModel pattern="[a-zA-Z]{3,}" class="form-control" placeholder="First name">
+                                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && !Firstname.valid">
+                                        <div *ngIf="Firstname.errors.required">
+                                                Firstname is required
+                                        </div>
+                                        <div *ngIf="Firstname.errors.minlength">
+                                                Firstname must be at least 3 characters long.
+                                        </div>
+                                        <div *ngIf="Firstname.errors.forbiddenName">
+                                                Firstname cannot be Bob.
+                                        </div>
+                                        <div *ngIf=" !Firstname.valid&&(!f.submitted||Firstname.dirty)">
+                                                Firstname must be only characters with no spacies
+                                              </div>
+
+                                </div>
+                        </div>
+                        <div class="col">
+                                <label for="Lastname">Last name</label>
+                                <input type="text" name="lastName" ngModel #Lastname=ngModel minlength=3 maxlength=10
+                                        required id="Lastname" pattern="[a-zA-Z]{3,}" class="form-control" placeholder="Last name">
+                                <div class="alert alert-danger" role="alert" *ngIf="!Lastname.valid &&f.submitted">
+                                        <div *ngIf="Lastname.errors.required">
+                                                Lastname is required
+                                        </div>
+                                        <div *ngIf="Lastname.errors.minlength">
+                                                Lastname must be at least 3 characters long.
+                                        </div>
+                                        <div *ngIf="Lastname.errors.forbiddenName">
+                                                Lastname cannot be Bob.
+                                        </div>
+                                        <div *ngIf=" !Lastname.valid&&(!f.submitted||Lastname.dirty)">
+                                                Firstname must be only characters with no spacies
+                                              </div>
+
+
+                                </div>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" required email class="form-control" ngModel #email=ngModel
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        <div class="alert alert-danger" role="alert" *ngIf="!email.valid &&f.submitted">
+                                <div *ngIf="email.errors.required">
+                                        Email is required
+                                </div>
+                                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+
+                        </div>
+
+                </div>
+                <div class="form-group">
+                        <label for="exampleInputphone">Phone</label>
+                        <input type="phone" name="phone" maxlength=25 pattern="^01[0-2]|[5]{1}[0-9]{8}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required phone class="form-control" ngModel #phone=ngModel
+                                id="exampleInputphone" aria-describedby="emailHelp" placeholder="Enter Phone">
+
+                        <div class="alert alert-danger" role="alert" *ngIf="!phone.valid &&f.submitted">
+                                <div *ngIf="phone.errors.required">
+                                        phone is required
+                                </div>
+                                <div *ngIf="!phone.valid">phone must be a valid phone</div>
+
+                        </div>
+
+                </div>
+                <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" required minlength="8" maxlength="30" name="password" ngModel #password=ngModel
+                                class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="alert alert-danger" role="alert" *ngIf="!password.valid &&f.submitted">
+                                <div *ngIf="password.errors.required">
+                                        password is required
+                                </div>
+                                <div *ngIf="password.errors.minlength">
+                                        password must be at least 8 characters long.
+                                </div>
+
+                        </div>
+                </div>
+                <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" name="img"
+                                (change)="imgInput($event)" accept=".png, .jpg, .jpeg">
+                        <label class="custom-file-label" for="customFile">Profile Image</label>
+                </div>
+
+                <div class="form-group">
+                        <label for="country">From</label>
+                        <select id="country" required ngModel #country=ngModel name="GovernorateId"
+                                class="form-control custom-select">
+                               
+                                <option value="5d2cae14be535215eccaabc3">Aswan</option>
+        <option value="5d2cae14be535215eccaabc4">Asyut</option>
+        <option value="5d2cae14be535215eccaabc5">Alexandria</option>
+        <option value="5d2cae14be535215eccaabc6">Beheira</option>
+        <option value="5d2cae14be535215eccaabc7">Beni Suef</option>
+        <option value="5d2cae14be535215eccaabc8">Cairo</option>
+        <option value="5d2cae14be535215eccaabc9">Dakahlia</option>
+        <option value="5d2cae14be535215eccaabca">Damietta</option>
+        <option value="5d2cae14be535215eccaabcb">Faiyum</option>
+        <option value="5d2cae14be535215eccaabcc">Gharbia</option>
+        <option value="5d2cae14be535215eccaabcd">Giza</option>
+        <option value="5d2cae14be535215eccaabce">Ismailia</option>
+        <option value="5d2cae14be535215eccaabcf">Kafr El Sheikh</option>
+        <option value="5d2cae14be535215eccaabd0">Luxor</option>
+        <option value="5d2cae14be535215eccaabd1">Matruh</option>
+        <option value="5d2cae14be535215eccaabd2">Minya</option>
+        <option value="5d2cae14be535215eccaabd3">Monufia</option>
+        <option value="5d2cae14be535215eccaabd4">New Valley</option>
+        <option value="5d2cae14be535215eccaabd5">North Sinai</option>
+        <option value="5d2cae14be535215eccaabd6">Port Said</option>
+        <option value="5d2cae14be535215eccaabd7">Qalyubia</option>
+        <option value="5d2cae14be535215eccaabd8">Qena</option>
+        <option value="5d2cae14be535215eccaabd9">Red Sea</option>
+        <option value="5d2cae14be535215eccaabda">Sharqia</option>
+        <option value="5d2cae14be535215eccaabdb">Sohag</option>
+        <option value="5d2cae14be535215eccaabdc">South Sinai</option>
+        <option value="5d2cae14be535215eccaabdd">Suez</option>
+
+
+                        </select>
+                        <div class="alert  alert-danger" role="alert" *ngIf="!country.valid &&f.submitted">
+                                <div *ngIf="country.errors.required">
+                                        country is required
+                                </div>
+                        </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+</div>

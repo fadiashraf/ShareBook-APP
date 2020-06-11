@@ -1,0 +1,47 @@
+
+      .parallax {
+        /* The image used */
+        background-image:url("https://img.freepik.com/free-photo/book-library-room_36325-102.jpg?size=626&ext=jpg");
+      
+        /* Set a specific height */
+        min-height: 200px; 
+     width:1345px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+     
+      @mixin flex() {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex {
+        @include flex();
+      }  
+    
+
+.custom-icon {
+    cursor: pointer;
+    display: flex;
+    width: 4.5vw;
+    height: 4.5vw;
+    color: white;
+    font-size: 80%;
+    
+    border-radius: 25vw;
+   // overflow: hidden;
+    background-size: cover;
+   // border: 6px solid #fff;
+    background-color:#93648d;
+    opacity: 0.8;
+   }
+   .tg-titlepluscounter {
+    text-align: left;
+    padding: 0 0 0 10px;
+    line-height: 1.5;
+    color: #484848;
+}

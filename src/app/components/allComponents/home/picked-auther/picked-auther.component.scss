@@ -1,0 +1,143 @@
+/* ---------------------- big Title ---------------------------*/
+.title
+{
+    font-size: 30px;
+    line-height: 20px;
+    color:#484848;
+
+}
+.author
+{
+    border-bottom: .5px solid #D2CFCF;
+    padding-bottom: 1.5%;
+
+
+}
+/* ---------------------- small Title ---------------------------*/
+
+.small-title
+{
+    font-size: 16px;
+    line-height: 16px;
+    padding-bottom: 10px;
+    color: #484848;
+}
+
+/********************** btn view all *******************************/
+.view-all
+{
+    border-radius: 20px;
+    border: 1px solid #666666;
+    padding: 10px 5px;
+    color:#666;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+}
+
+.view-all:hover{
+    background: #77b748;
+    color:#fff;
+
+}
+.picted-author
+{
+    width: 31.5%;
+    background: #f7f7f7;
+}
+
+
+.container-book
+{
+    width:60%;
+    position: relative;
+    left: 0;
+ -webkit-transition: all 300ms ease-out;
+ -moz-transition: all 300ms ease-out;
+ -o-transition: all 300ms ease-out;
+ -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+
+}
+
+.picted-author:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-bottom: 4px solid #77b748;
+}
+.picted-author:hover .content-book { 
+    opacity: .8;
+ }
+
+.content-book
+{
+    background-color: #424344;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    z-index: 100;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3% ;
+  }
+
+
+
+  .yellow-star
+  {
+      color:#fcd01e ;
+      font-size: 20px;
+  }
+  .white-star
+  {
+      color:	#DADADA;
+  }
+
+.details-book
+{
+    border-top: .5px solid #D2CFCF;
+    width:85%;
+    padding: 2% 0px;
+}
+.title-ads-book
+{
+    color: #484848;
+    
+
+}
+.title-ads-book:hover
+{
+    color: #77b748;
+}
+
+.name-auther
+{
+    font-size: 13px;
+    line-height: 13px;
+    color:#666666;
+}
+.name-auther:hover
+{
+    color:#337ab7;
+}
+
+.review
+{
+    border-radius: 20px;
+    border: 1px solid #666666;
+    padding: 3% 8%;
+    color:#666;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+}
+
+.review:hover{
+    background: #77b748;
+    color:#fff;
+
+}

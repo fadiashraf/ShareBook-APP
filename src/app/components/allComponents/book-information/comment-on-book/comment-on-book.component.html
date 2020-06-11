@@ -1,0 +1,40 @@
+<section class="container mt-4 mb-4">
+    <div class="row title-comments pb-1 mb-2">
+        <p class="">Customer Reviews</p>
+        <div class="review w-100 mt-2">
+                <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+                    </ng-template>
+
+                    <ngb-rating [(rate)]="rateOnBook" [starTemplate]="t" [readonly]="true" max="5">
+                </ngb-rating>
+            <p class=" float-right w-75 reviews">{{reviewsBook}} reviews </p>
+        </div>
+    </div>
+
+    <div class="row all-comments clearfix">
+        <div *ngFor="let comment of commentOnBook" class="comment clearfix col-12">
+            <p class="comment-msg clearfix width-100">{{comment.comment}} <span>
+                    <ng-template #t let-fill="fill">
+                        <div class="edit-star">
+                            <span class="star" [class.full]="fill === 100">
+                                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                            </span></div>
+                        </ng-template>
+    
+                        <ngb-rating [(rate)]="comment.avgRating" [starTemplate]="t" [readonly]="true" max="5">
+                    </ngb-rating>
+                </span></p>
+            <div class="row clearfix">
+                <p class="by-color">By :<span class="user-name">{{comment.userId.name}}</span><span> , {{comment.date | date:'medium'}}</span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</section>

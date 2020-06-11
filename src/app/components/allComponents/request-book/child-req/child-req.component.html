@@ -1,0 +1,68 @@
+<div class="all-ads info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="title-page">
+                <p class="small-title m-0">People’s Choice</p>
+                <p class="large-title mt-0"> Books Requests </p>
+            </div>
+
+        </div>
+        <div class="row d-flex justify-content-between w-100 mt-4 mb-4">
+            <!-- <div *ngFor="let item of collection | paginate: { itemsPerPage: 8, currentPage: p }"
+                class="ads-book   p-0 mb-2"> -->
+            <div *ngFor="let item of reqList "
+                class="ads-book   p-0 mb-2">
+                <!-- <img src="./assets/ads_book/img-07.jpg" class="img-thumbnail img-back"> -->
+                <img  width="200px" height="250px" src="http://localhost:3000/{{item.img}}" onerror="this.onerror=null;this.src='./assets/ads_book/img-07.jpg'"  class="img-thumbnail img-back">
+                <p>
+                    <span class="category-ads-book">{{item.CategoryId.catName}}</span>
+                </p>
+                <p class="font-weight-bold title-ads-book "> {{item.title}}</p>
+                <p class="mb-0">
+                    <span class="by-color">By :</span>
+                    <span class="name-auther">{{item.userId.name}}</span>
+                </p>
+                <!-- <div class="yellow-star">&#9733;&#9733;&#9733;<span class="white-star">&#9734;&#9734;</span>
+                </div> -->
+                <ng-template #t let-fill="fill">
+                        <div class="edit-star">
+                            <span class="star" [class.full]="fill === 100">
+                                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                            </span></div>
+                        </ng-template>
+    
+                        <ngb-rating [(rate)]="item.bookID.avgRating" [starTemplate]="t" [readonly]="true" max="5">
+                    </ngb-rating>
+                <p class="font-weight-bold m-0 price">{{item.price}}$</p>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <a routerLink="/book/{{item.bookID._id}}" class="badge badge-success book-review">book review</a>
+                    <a routerLink="/user/{{item.userId._id}}" class="badge badge-info book-review">saller review</a>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                        <a *ngIf="userLoginId== item?.userId?._id ? false :true" routerLink="/inbox/{{item.userId._id}}" class="badge badge-info book-review">send Msg</a>
+                        <a routerLink="/req-book/{{item?._id}}" class="badge badge-success book-review">request detail</a>
+                    </div>
+            </div>
+
+        </div>
+        <!-- <div class="row">
+            <div class="mx-auto">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary btn-lg" *ngIf="isActiveBack" (click)="backAds()">Back</button>
+            
+         </div>
+         <div class="col">
+          
+             <button class="btn btn-primary btn-lg" *ngIf="isActiveNext" (click)="nextAds()">Next</button>
+            <!-- <button (click)="nextAds()">next</button> -->
+        </div>
+        </div>
+
+    </div>
+</div>

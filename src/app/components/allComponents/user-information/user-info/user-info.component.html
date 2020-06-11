@@ -1,0 +1,153 @@
+<section class="container mt-4 mb-4 book-info">
+    <div class="row d-flex justify-content-between">
+        <div class="col-sm-2 info">
+            <img src="http://localhost:3000/users/{{userInfo?.img}}"  onerror="this.onerror=null;this.src='./assets/ads_book/imag-03.jpg'" class="img-fluid img-back">
+        </div>
+        <div class="col-sm-10 info">
+            <div class="row">
+                <div class="info-book">
+                    <p class="title-book">{{userInfo?.name}}</p>
+                    <div class="description">
+                        <p class="by-color">Email : <span class="name-auther">{{userInfo?.email}}</span></p>
+                        <p class="by-color">Phone : <span class="name-auther">{{userInfo?.phone}}</span></p>
+                        <p class="by-color">Join Us : <span class="name-auther">{{userInfo?.dateOfCreation | date:'medium'}}</span></p>
+
+
+                    </div>
+                </div>
+                <div class="view-book mt-5 mb-5">
+                    <div class="review mt-3">
+
+                        <!-- <div class="yellow-star float-left w-50">&#9733;&#9733;&#9733;<span
+                                class="white-star">&#9734;&#9734;</span> -->
+
+                        <!-- <span class="yellow-star float-left w-50" [class.full]="fill === 100">&#9733;
+                                        <span class="white-star" [style.width.%]="fill">&#9734;</span></span>
+                                    </ng-template> -->
+
+                        <ng-template #t let-fill="fill">
+                            <span class="star" [class.full]="fill === 100">
+                                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                            </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="reviewsInfoAverage" [starTemplate]="t" [readonly]="true" max="5">
+                        </ngb-rating>
+                        <p class=" float-right w-50">{{reviewsInfoNumber}} reviews </p>
+                    </div>
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Launch
+                        modal</button> -->
+                    <button *ngIf="isAuthUser" type="button" class="btn btn-review mt-1" data-toggle="modal"
+                        data-target="#myModal">
+                        Rate this person
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="heading lead">Feedback request
+                                    </p>
+                                    <button type="button"  #closeModal class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">×</span>
+                                    </button>
+                                </div>
+                                <!-- Body-->
+                                <div class="modal-body">
+                                    <div class="text-center">
+                                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                                        <p>
+                                            <strong>Your opinion matters</strong>
+                                        </p>
+                                        <p>Have some ideas how to improve our product?
+                                            <strong>Give us your feedback.</strong>
+                                        </p>
+                                    </div>
+
+                                    <hr>
+                                    <form (ngSubmit)="onSubmit(commentOnUser)" #commentOnUser="ngForm">
+
+                                        <!-- Radio -->
+                                        <p class="text-center">
+                                            <strong>Your rating</strong>
+                                        </p>
+                                        <div class="form-group">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="avgRating" ngModel type="radio"
+                                                    id="radio-179" value="5" checked>
+                                                <label class="form-check-label" for="radio-179">Very good</label>
+                                            </div>
+
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="avgRating" ngModel type="radio"
+                                                    id="radio-279" value="4">
+                                                <label class="form-check-label" for="radio-279">Good</label>
+                                            </div>
+
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="avgRating" ngModel type="radio"
+                                                    id="radio-379" value="3">
+                                                <label class="form-check-label" for="radio-379">Mediocre</label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="avgRating" ngModel type="radio"
+                                                    id="radio-479" value="2">
+                                                <label class="form-check-label" for="radio-479">Bad</label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" name="avgRating" ngModel type="radio"
+                                                    id="radio-579" value="1">
+                                                <label class="form-check-label" for="radio-579">Very bad</label>
+                                            </div>
+                                        </div>
+                                        <!-- Radio -->
+
+                                        <p class="text-center">
+                                            <strong>What could we improve?</strong>
+                                        </p>
+                                        <!--Basic textarea-->
+                                        <div class="form-group">
+                                            <div class="md-form">
+                                                <textarea type="text" id="form79textarea"
+                                                    class="md-textarea form-control" rows="3" name="comment"
+                                                    ngModel></textarea>
+                                                <label for="form79textarea">Your message</label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <div class="md-form">
+                                                <input type="hidden" value="{{bookInfo?.book?._id}}"  name="bookId" ngModel>
+                                            </div>
+                                        </div> -->
+
+
+                                        <!--Footer-->
+                                        <div class="modal-footer justify-content-center">
+                                            <button type="submit" class="btn btn-primary ">Send
+                                                <i class="fa fa-paper-plane ml-1"></i>
+                                            </button>
+                                            <a type="button" class="btn btn-outline-primary waves-effect"
+                                                data-dismiss="modal">Cancel</a>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal: modalPoll -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-comment-on-user [reviewsUser]='reviewsInfoNumber' [userId]='sendId'
+ [commentOnUser]='comments' [rateOnUser]='reviewsInfoAverage'></app-comment-on-user>

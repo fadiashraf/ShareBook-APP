@@ -1,0 +1,30 @@
+h6.Book:hover
+{
+ color: 		#32CD32;   
+}
+p small.Auther:hover,.category:hover
+{
+    color: 	#4169E1;    
+}
+.price
+{
+    color: #32CD32;
+    font-weight: bold;
+   font-size: 3ch ;
+}
+////////////////////
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: .5rem;
+    color: #d3d3d3;
+  }
+  .full {
+    color: #fcd01e;
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #fcd01e;
+  }

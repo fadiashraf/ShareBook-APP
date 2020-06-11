@@ -1,0 +1,73 @@
+.title-comments
+{
+    // background-color: #efefef;
+    font-size: 30px;
+    line-height: 20px;
+    color:#484848;
+    padding: 2%;
+
+}
+.yellow-star
+{
+    color:#fcd01e ;
+    font-size: 30px;
+
+}
+.white-star
+{
+    color:	#DADADA;
+}
+
+.reviews
+{
+    line-height: 20px;
+    font-size: 20px;
+    letter-spacing: normal;
+    color: rgb(129, 126, 126);
+    
+  
+    
+}
+.comment{
+    border-top: .5px solid #D2CFCF;
+    padding: 2%;
+
+}
+.comment .yellow-star
+{
+    font-size: 18px;
+}
+.by-color
+{
+    color:#D2CFCF;
+}
+.user-name
+{
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #484848;
+}
+
+// //////////////
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #d3d3d3;
+  }
+  .full {
+    color: #fcd01e;
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #fcd01e;
+  }
+
+  .edit-star .star
+  {
+    font-size: 15px;
+
+  }

@@ -1,0 +1,55 @@
+<section class="container mt-4 mb-4 book-info" >
+    <div class="row d-flex justify-content-between">
+        <div class="col-sm-2 info">
+            <a routerLink="/book/{{reqInfo?.bookID._id}}" >  
+            <img  width="250px" height="300px" src="http://localhost:3000/{{reqInfo?.img}}" 
+                onerror="this.onerror=null;this.src='./assets/ads_book/img-07.jpg'"
+                  class="img-thumbnail img-back">
+            <!-- <img src="./assets/uploads/{{reqInfo?.img}}" class="img-fluid img-back"> -->
+            <p class="mt-2 isbn">ISBN: <span class=" isbn-num">{{reqInfo?.ISBN}}</span></p>
+        </a>
+        </div>
+        <div class="col-sm-10 info">
+            <div class="row">
+                <div class="info-book">
+                    <!-- <p class="title-book">{{reqInfo?.bookID?.title}}</p> -->
+                    <a routerLink="/book/{{reqInfo?.bookID._id}}" ><p class="title-book">{{reqInfo?.bookID?.title}}</p></a>
+                    <p class="by-color">by : <span class="name-auther">{{reqInfo?.userId?.name}}</span></p>
+                    <div class="description">
+                        <p class="by-color">Ask Type : <span class="name-auther">{{reqInfo?.askType}}</span></p>
+                        <p class="by-color">description: <span class="name-auther">{{reqInfo?.description}}</span></p>
+                        <p class="by-color">Author Name : <span class="name-auther">{{reqInfo?.authorId.Name}}</span></p>
+                        <p class="by-color">category  : <span class="name-auther">{{reqInfo?.CategoryId.catName }}</span></p>
+                        <p class="by-color">City  : <span class="name-auther">{{reqInfo?.City.name }}</span></p>
+                        <p class="by-color">rate  : <span class="name-auther">{{reqInfo?.bookID.avgRating }}</span></p>
+                        <p class="by-color">join Us  : <span class="name-auther">{{reqInfo?.updatedAt}}</span></p>
+                        
+
+                    </div>
+                </div>
+                <div class="view-book mt-5 mb-5">
+                    <div class="review mt-3">
+
+                        <p class="  w-100">{{reqInfo?.views}} Views </p>
+                    </div>
+
+                    <a *ngIf="userLoginId== reqInfo?.userId?._id ? false :true"
+                    routerLink="/inbox/{{reqInfo?.userId._id}}" class="btn btn-review mt-1">
+                    Send Msg
+                </a>
+                <a *ngIf="userLoginId== reqInfo?.userId?._id ? false :true"
+                    routerLink="/user/{{reqInfo?.userId._id}}" class="btn btn-review mt-1">
+                    profile User
+                </a>
+                   
+
+                 
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+

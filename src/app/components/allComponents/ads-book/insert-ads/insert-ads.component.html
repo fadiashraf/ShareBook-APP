@@ -1,0 +1,158 @@
+<div class="container mt-4">
+  <div class="text-center">
+    <h3 class="" style="margin-top:100px">Insert an ads</h3>
+  </div>
+  <div class="text-center" [hidden]='!added'>
+    <h3 class="" style="color:green">added successfully</h3>
+  </div>
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleInputTitel">Book Title</label>
+      <input type="text" name="title" required class="form-control" ngModel #Titel=ngModel id="exampleInputEmail1"
+        aria-describedby="emailHelp" placeholder="Enter title of book">
+
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div class="alert alert-danger" role="alert" *ngIf="!Titel.valid &&f.submitted">
+        <div *ngIf="Titel.errors.required">
+          title is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="country">select Author</label>
+      <input type="text" required ngModel pattern="[a-zA-Z]{3,}" #authorName=ngModel name="authorName"
+        class="form-control custom-select">
+
+      <div class="alert  alert-danger" role="alert" *ngIf="!authorName.valid &&f.submitted">
+        <div *ngIf="authorName.errors.required">
+          Auther is required
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Book description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" ngModel #description=ngModel rows="3"
+        name="description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="ISBN">ISBN</label>
+      <input type="text" required maxlength=13
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="ISBN" ngModel
+        #Ispn=ngModel class="form-control" id="exampleInputPassword1" placeholder="ISBN">
+    </div>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" name="img" accept=".png, .jpg, .jpeg" id="customFile"
+        (change)="imgInput($event)">
+      <label class="custom-file-label" for="customFile">Book Image</label>
+    </div>
+    <div class="form-group">
+      <label for="country">select Category</label>
+      <select id="Category" required ngModel #Category=ngModel name="CategoryId" class="form-control custom-select">
+        <option selected> Category</option>
+        <option value="5d2cd5af8348a73434521a02">Arts & Music</option>
+        <option value="5d2cd5d28348a73434521a03">Kids</option>
+        <option value="5d2cd63e8348a73434521a04">Literature</option>
+        <option value="5d2de52fa5f31e2498c678d0">History</option>
+        <option value="5d2de542a5f31e2498c678d1">Education</option>
+        <option value="5d2de562a5f31e2498c678d2">Religion</option>
+        <option value="5d2de579a5f31e2498c678d3">Politics</option>
+        <option value="5d2de596a5f31e2498c678d4">Health</option>
+      </select>
+      <div class="alert  alert-danger" role="alert" *ngIf="!Category.valid &&f.submitted">
+        <div *ngIf="Category.errors.required">
+          Category is required
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="Edition">select Edition </label>
+      <select id="Edition" required ngModel #Edition=ngModel name="Edition" class="form-control custom-select">
+        <option selected> frist</option>
+        <option value="1">second</option>
+        <option value="2">third</option>
+        <option value="3">forth</option>
+      </select>
+      <div class="alert  alert-danger" role="alert" *ngIf="!Edition.valid &&f.submitted">
+        <div *ngIf="Edition.errors.required">
+          Edition is required
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="City">select City </label>
+      <select id="City" required ngModel #City=ngModel name="City" class="form-control custom-select">
+        <option value="5d2cae14be535215eccaabc3">Aswan</option>
+        <option value="5d2cae14be535215eccaabc4">Asyut</option>
+        <option value="5d2cae14be535215eccaabc5">Alexandria</option>
+        <option value="5d2cae14be535215eccaabc6">Beheira</option>
+        <option value="5d2cae14be535215eccaabc7">Beni Suef</option>
+        <option value="5d2cae14be535215eccaabc8">Cairo</option>
+        <option value="5d2cae14be535215eccaabc9">Dakahlia</option>
+        <option value="5d2cae14be535215eccaabca">Damietta</option>
+        <option value="5d2cae14be535215eccaabcb">Faiyum</option>
+        <option value="5d2cae14be535215eccaabcc">Gharbia</option>
+        <option value="5d2cae14be535215eccaabcd">Giza</option>
+        <option value="5d2cae14be535215eccaabce">Ismailia</option>
+        <option value="5d2cae14be535215eccaabcf">Kafr El Sheikh</option>
+        <option value="5d2cae14be535215eccaabd0">Luxor</option>
+        <option value="5d2cae14be535215eccaabd1">Matruh</option>
+        <option value="5d2cae14be535215eccaabd2">Minya</option>
+        <option value="5d2cae14be535215eccaabd3">Monufia</option>
+        <option value="5d2cae14be535215eccaabd4">New Valley</option>
+        <option value="5d2cae14be535215eccaabd5">North Sinai</option>
+        <option value="5d2cae14be535215eccaabd6">Port Said</option>
+        <option value="5d2cae14be535215eccaabd7">Qalyubia</option>
+        <option value="5d2cae14be535215eccaabd8">Qena</option>
+        <option value="5d2cae14be535215eccaabd9">Red Sea</option>
+        <option value="5d2cae14be535215eccaabda">Sharqia</option>
+        <option value="5d2cae14be535215eccaabdb">Sohag</option>
+        <option value="5d2cae14be535215eccaabdc">South Sinai</option>
+        <option value="5d2cae14be535215eccaabdd">Suez</option>
+
+      </select>
+      <div class="alert  alert-danger" role="alert" *ngIf="!City.valid &&f.submitted">
+        <div *ngIf="City.errors.required">
+          City is required
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="price">price</label>
+      <input type="text" name="price" ngModel #price=ngModel maxlength=5 class="form-control" id="priceinput"
+        aria-describedby="emailHelp" placeholder="Enter Price">
+
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" ngModel #adsType=ngModel name="adsType" id="inlineRadio1"
+        value="Borrow">
+      <label class="form-check-label" for="inlineRadio1">Borrow</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="adsType" ngModel #adsType=ngModel id="inlineRadio2"
+        value="Sale">
+      <label class="form-check-label" for="inlineRadio2">Sale</label>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">insert </button>
+  </form>
+
+</div>

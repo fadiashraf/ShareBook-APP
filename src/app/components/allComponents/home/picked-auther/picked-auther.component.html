@@ -1,0 +1,62 @@
+<section class="container mb-3 mt-3">
+    <div class="row">
+        <article class="col-sm-12">
+            <p class="font-weight-light mb-0 small-title">Some Great Books</p>
+
+            <div class="row author">
+                <p class="title col-sm-11">Picked By Popular Book</p>
+                <a class="col-sm-1 badge badge-light view-all" href="#">View All</a>
+            </div>
+        </article>
+        <section class="col-sm-12  mt-5">
+            <div class="container p-0 ">
+                <div class="row d-flex justify-content-between">
+                    <div *ngFor="let popular of popularBook" class="picted-author">
+                        <figure class="container-book mx-auto mt-4 mb-4 ">
+                            <div class="img-book">
+                                <img class="img-fluid  " src="http://localhost:3000/{{popular.img}}" alt="{{popular.title}}"
+                                    width="304" height="228">
+                            </div>
+                            <div class="content-book ">
+                                <p class="description-bool">
+                                  {{popular.description}}
+                                </p>
+                                <p class="category-ads-book">
+                                    Category:
+                                    <span>{{popular.CategoryId.catName}} </span>
+                                </p>
+                                <!-- <p class="price">
+                                    <span>Price :</span>
+                                    <span>$100</span>
+                                </p> -->
+                                <div class="yellow-star">&#9733;&#9733;&#9733;<span
+                                        class="white-star">&#9734;&#9734;</span></div>
+
+                            </div>
+
+
+
+                        </figure>
+                        <div class="details-book text-center mx-auto">
+                            <p class="font-weight-bold title-ads-book pt-1"> {{popular.title}}</p>
+                            <p class="name-auther">
+                                <span>By :</span>
+                                <span>{{popular.authorId.Name}}</span>
+                            </p>
+                            <a class=" badge badge-light mx-auto review mb-2" routerLink="/book/{{popular._id}}"><i class="fas fa-eye"></i>
+                                Review</a>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

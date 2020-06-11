@@ -1,0 +1,87 @@
+
+.form-search :focus
+{
+    border: 2px solid #77b748;
+}
+input[type=text] {
+    color: #666;
+    outline: none;
+    height: 40px;
+    background: #fff;
+    font-size: 14px;
+    box-shadow: none;
+    line-height: 18px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #dbdbdb;
+  }
+.btn-search
+{
+    background: #484848;
+    border: none;
+
+}
+i{
+    color:white;
+}
+.side-ads
+{
+    width: 25%;
+}
+.title-trending
+{
+    background: #484848;
+    border-radius: 5px;
+
+    
+}
+
+.title-trending p
+{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 40px;
+    padding:0% 8%;
+
+}
+a{
+    text-decoration: none;
+}
+.book-img{
+    border:4px solid white;
+
+}
+
+
+.book-trending:hover .book-img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.book-trending:hover .title-book , .author-book span{
+    color:#77b748;
+}
+.book-trending:hover .span-author{
+    color:#77b748;
+}
+.title-book 
+{
+    color:#666666;
+    size:13px;
+    font-weight: bold;
+}
+.by-book
+{
+    size:16px;
+    color:#666666;
+
+}
+.all-ads
+{
+    width: 70%;
+}
+.info
+  {
+      margin-top:5%;
+  }

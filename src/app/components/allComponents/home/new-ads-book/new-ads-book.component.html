@@ -1,0 +1,36 @@
+<section class="container mb-3 mt-3">
+    <div class="row">
+        <article class="col-sm-6">
+            <p class="font-weight-light mb-0 small-title">Taste The New Spice</p>
+            <p class="title">New Release Books</p>
+            <p class="make-line pl=0"> adipisicing elit sed do eiusmod tempor incididunt labore
+                toloregna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamcoiars nisiuip commodo consequat aute irure dolor in aprehenderit aveli
+                esseati cillum dolor fugiat nulla pariatur cepteur sint occaecat cupidatat.
+            </p>
+            <!-- <button type="button" class="btn-view-all">View All</button> -->
+            <a routerLink="/ads-book" class="btn-view-all m-2">View All</a>
+        </article>
+        <section class="col-sm-6  mt-1">
+            <div class="container p-0 ">
+                <div class="row d-flex justify-content-between">
+                    <div *ngFor="let last of lastAds " class="ads-book  p-0">
+                        <img src="http://localhost:3000/{{last.img}}"   class="img-thumbnail img-back">
+                        <p>
+                            <span class="category-ads-book">{{last.CategoryId.catName}} </span>
+                            
+                        </p>
+                        <p class="font-weight-bold title-ads-book"> {{last.bookID.title}}</p>
+                        <p>
+                            <span class="by-color">By :</span>
+                            <span class="name-auther">{{last.userId.name}}</span>
+                        </p>
+                        <div class="yellow-star">&#9733;&#9733;&#9733;<span class="white-star">&#9734;&#9734;</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

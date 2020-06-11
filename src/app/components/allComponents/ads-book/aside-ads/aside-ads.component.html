@@ -1,0 +1,89 @@
+<!-- <router-outlet></router-outlet> -->
+
+<section class="container  info" style="margin-top:100px">
+    <div class="row  d-flex justify-content-between">
+        <div class="side-ads">
+                <form class="form-inline ">
+            <!-- <div class="input-group mt-2 mb-3 form-search w-100">
+                <input type="text" class="form-control" placeholder="Search by title, author, key...">
+                    <button class="btn btn-search" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+            </div> -->
+            </form>
+            <!-- Trending Ads Book -->
+            <div class="title-trending">
+                <p>Trending Ads</p>
+
+            </div>
+            <div class="content-trending">
+
+                <section class="container ">
+                    <a  *ngFor="let mostAds of popularAds" routerLink="/ads-book/{{mostAds?._id}}" class="book-trending ">
+                        <div class="row ">
+                            <div class="col-sm-4 pl-0">
+                                <img src="http://localhost:3000/{{mostAds.img}}" class="book-img img-fluid">
+                            </div>
+                            <div class="col-sm-8 p-2">
+                                <p class="title-book">{{mostAds.title}} </p>
+                                <p class="by-book"> By:<span class="span-author">{{mostAds.userId.name}}</span> </p>
+                            </div>
+                        </div>
+                    </a>
+                 
+                </section>
+
+            </div>
+
+            <!-- Top Bloogers -->
+            <div class="title-trending mt-4">
+                <p>Top Bloogers</p>
+
+            </div>
+            <div class="content-trending">
+                    
+                <section  class="container ">
+                    <a   *ngFor="let userInfo of popularUsers " routerLink="/user/{{userInfo?.user?._id}}"  class="book-trending ">
+                        <div class="row ">
+                            <div class="col-sm-4 pl-0">
+                                <img src="http://localhost:3000/users/{{userInfo.user.img}}" onerror="this.onerror=null;this.src='./assets/ads_book/imag-03.jpg'"   class=" img-fluid book-img">
+                            </div>
+                            <div class="col-sm-8 p-2">
+                                <p class="title-book">{{userInfo.user.name}} </p>
+                                <p class="by-book"> {{userInfo.count.count}} Published Ads</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <a href="" class="book-trending ">
+                        <div class="row ">
+                            <div class="col-sm-4 pl-0">
+                                <img src="./assets/ads_book/imag-03.jpg" class=" img-fluid book-img">
+                            </div>
+                            <div class="col-sm-8 p-2">
+                                <p class="title-book">Jude Morphew </p>
+                                <p class="by-book"> 21,658 Published Books</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="book-trending ">
+                        <div class="row ">
+                            <div class="col-sm-4 pl-0 ">
+                                <img src="./assets/ads_book/imag-03.jpg" class="img-fluid book-img">
+                            </div>
+                            <div class="col-sm-8 p-2">
+                                <p class="title-book">Jude Morphew </p>
+                                <p class="by-book"> 21,658 Published Books</p>
+                            </div>
+                        </div>
+                    </a> -->
+
+                </section>
+
+            </div>
+
+        </div>
+        <div class="all-ads">
+        <app-child-ads></app-child-ads>
+        </div>  
+    </div>
+</section>
